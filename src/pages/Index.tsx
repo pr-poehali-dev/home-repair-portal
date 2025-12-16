@@ -315,7 +315,7 @@ export default function Index() {
               <Badge className="mb-4" variant="outline">О компании</Badge>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Мы создаем пространства мечты</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                РемонтПро — это команда профессионалов с 12-летним опытом в сфере ремонта и отделки. 
+                KapitalRu — это команда профессионалов с 12-летним опытом в сфере ремонта и отделки. 
                 Мы не просто выполняем работы, мы воплощаем ваши идеи в реальность, добавляя творческий подход и внимание к деталям.
               </p>
               <div className="space-y-4">
