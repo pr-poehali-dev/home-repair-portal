@@ -112,14 +112,14 @@ export default function Index() {
 
   return (
     <div className="min-h-screen">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                 <Icon name="Home" className="text-white" size={20} />
               </div>
-              <span className="text-xl font-bold text-accent">РемонтПро</span>
+              <span className="text-xl font-bold text-foreground">РемонтПро</span>
             </div>
             <div className="flex items-center gap-2">
               <a href="#services" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Услуги</a>
