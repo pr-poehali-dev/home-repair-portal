@@ -119,7 +119,7 @@ export default function Index() {
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                 <Icon name="Home" className="text-white" size={20} />
               </div>
-              <span className="text-xl font-bold text-foreground">РемонтПро</span>
+              <span className="text-xl font-bold text-foreground">KapitalRu</span>
             </div>
             <div className="flex items-center gap-2">
               <a href="#services" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Услуги</a>
@@ -447,8 +447,8 @@ export default function Index() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg mb-1">Email</h4>
-                    <p className="text-muted-foreground">info@remontpro.ru</p>
-                    <p className="text-muted-foreground">zakaz@remontpro.ru</p>
+                    <p className="text-muted-foreground">info@kapitalru.ru</p>
+                    <p className="text-muted-foreground">zakaz@kapitalru.ru</p>
                   </div>
                 </div>
               </Card>
@@ -477,7 +477,7 @@ export default function Index() {
                 <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
                   <Icon name="Home" className="text-white" size={20} />
                 </div>
-                <span className="text-xl font-bold">РемонтПро</span>
+                <span className="text-xl font-bold">KapitalRu</span>
               </div>
               <p className="text-white/70 text-sm">
                 Профессиональный ремонт с творческим подходом. Превращаем ваши идеи в реальность.
@@ -505,13 +505,13 @@ export default function Index() {
               <h4 className="font-semibold mb-4">Контакты</h4>
               <ul className="space-y-2 text-sm text-white/70">
                 <li>+7 (999) 123-45-67</li>
-                <li>info@remontpro.ru</li>
+                <li>info@kapitalru.ru</li>
                 <li>г. Москва, ул. Строителей, 15</li>
               </ul>
             </div>
           </div>
           <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
-            © 2024 РемонтПро. Все права защищены.
+            © 2024 KapitalRu. Все права защищены.
           </div>
         </div>
       </footer>
