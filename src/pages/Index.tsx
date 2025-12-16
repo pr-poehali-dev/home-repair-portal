@@ -123,6 +123,7 @@ export default function Index() {
             </div>
             <div className="flex items-center gap-2">
               <a href="#services" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Услуги</a>
+              <a href="#portfolio" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Портфолио</a>
               <a href="#about" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">О нас</a>
               <a href="#reviews" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Отзывы</a>
               <a href="#contacts" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Контакты</a>
@@ -360,7 +361,182 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 px-4 bg-muted/30">
+      <section id="portfolio" className="py-20 px-4 bg-muted/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4" variant="outline">Портфолио</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши работы</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Реализованные проекты, которыми мы гордимся
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+              <div className="aspect-[4/3] bg-gradient-to-br from-primary/30 to-secondary/30 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Icon name="Home" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="absolute top-3 right-3">
+                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Квартира в ЖК "Новая Москва"</CardTitle>
+                <CardDescription>Капитальный ремонт, 85 м²</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Срок выполнения:</span>
+                    <span className="font-semibold">3 месяца</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Дата:</span>
+                    <span className="font-semibold">Октябрь 2024</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary/30 to-primary/30 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Icon name="Bath" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="absolute top-3 right-3">
+                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Ванная комната премиум</CardTitle>
+                <CardDescription>Полная перепланировка, 12 м²</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Срок выполнения:</span>
+                    <span className="font-semibold">1 месяц</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Дата:</span>
+                    <span className="font-semibold">Сентябрь 2024</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+              <div className="aspect-[4/3] bg-gradient-to-br from-primary/30 to-secondary/30 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Icon name="Sofa" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="absolute top-3 right-3">
+                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Гостиная в стиле лофт</CardTitle>
+                <CardDescription>Дизайнерский ремонт, 45 м²</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Срок выполнения:</span>
+                    <span className="font-semibold">2 месяца</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Дата:</span>
+                    <span className="font-semibold">Ноябрь 2024</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary/30 to-primary/30 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Icon name="Utensils" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="absolute top-3 right-3">
+                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Кухня-студия</CardTitle>
+                <CardDescription>Современный дизайн, 30 м²</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Срок выполнения:</span>
+                    <span className="font-semibold">1.5 месяца</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Дата:</span>
+                    <span className="font-semibold">Август 2024</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+              <div className="aspect-[4/3] bg-gradient-to-br from-primary/30 to-secondary/30 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Icon name="Building" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="absolute top-3 right-3">
+                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Офисное помещение</CardTitle>
+                <CardDescription>Коммерческий ремонт, 120 м²</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Срок выполнения:</span>
+                    <span className="font-semibold">4 месяца</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Дата:</span>
+                    <span className="font-semibold">Июль 2024</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
+              <div className="aspect-[4/3] bg-gradient-to-br from-secondary/30 to-primary/30 relative overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Icon name="Bed" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="absolute top-3 right-3">
+                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
+                </div>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-xl">Спальня в минимализме</CardTitle>
+                <CardDescription>Косметический ремонт, 25 м²</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Срок выполнения:</span>
+                    <span className="font-semibold">3 недели</span>
+                  </div>
+                  <div className="flex justify-between text-sm">
+                    <span className="text-muted-foreground">Дата:</span>
+                    <span className="font-semibold">Декабрь 2024</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" className="py-20 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-16">
             <Badge className="mb-4" variant="outline">Отзывы клиентов</Badge>
