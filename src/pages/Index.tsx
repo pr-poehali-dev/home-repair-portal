@@ -121,11 +121,11 @@ export default function Index() {
               </div>
               <span className="text-xl font-bold text-accent">РемонтПро</span>
             </div>
-            <div className="hidden md:flex items-center gap-8">
-              <a href="#services" className="text-sm font-semibold hover:text-primary transition-colors">Услуги</a>
-              <a href="#about" className="text-sm font-semibold hover:text-primary transition-colors">О нас</a>
-              <a href="#reviews" className="text-sm font-semibold hover:text-primary transition-colors">Отзывы</a>
-              <a href="#contacts" className="text-sm font-semibold hover:text-primary transition-colors">Контакты</a>
+            <div className="flex items-center gap-2">
+              <a href="#services" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Услуги</a>
+              <a href="#about" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">О нас</a>
+              <a href="#reviews" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Отзывы</a>
+              <a href="#contacts" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Контакты</a>
             </div>
             <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
               <DialogTrigger asChild>
