@@ -111,26 +111,29 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen">
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 py-4">
+    <div className="min-h-screen bg-gradient-to-b from-background via-secondary/20 to-background">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/40">
+        <div className="container mx-auto px-6 py-4">
           <nav className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                <Icon name="Home" className="text-white" size={20} />
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <div className="w-11 h-11 bg-gradient-to-br from-primary via-primary to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25">
+                  <Icon name="Home" className="text-white" size={22} />
+                </div>
+                <div className="absolute -inset-1 bg-gradient-to-br from-primary to-purple-600 rounded-2xl blur opacity-30 -z-10"></div>
               </div>
-              <span className="text-xl font-bold text-foreground">KapitalRu</span>
+              <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">KapitalRu</span>
             </div>
-            <div className="flex items-center gap-2">
-              <a href="#services" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Услуги</a>
-              <a href="#portfolio" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Портфолио</a>
-              <a href="#about" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">О нас</a>
-              <a href="#reviews" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Отзывы</a>
-              <a href="#contacts" className="px-4 py-2 text-sm font-semibold hover:bg-muted rounded-lg transition-colors">Контакты</a>
+            <div className="hidden md:flex items-center gap-1">
+              <a href="#services" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-secondary/50 rounded-xl transition-all">Услуги</a>
+              <a href="#portfolio" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-secondary/50 rounded-xl transition-all">Портфолио</a>
+              <a href="#about" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-secondary/50 rounded-xl transition-all">О нас</a>
+              <a href="#reviews" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-secondary/50 rounded-xl transition-all">Отзывы</a>
+              <a href="#contacts" className="px-4 py-2 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-secondary/50 rounded-xl transition-all">Контакты</a>
             </div>
             <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
               <DialogTrigger asChild>
-                <Button size="lg" className="font-semibold">
+                <Button size="lg" className="font-semibold shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all">
                   <Icon name="Calendar" className="mr-2" size={18} />
                   Записаться
                 </Button>
@@ -215,93 +218,94 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-accent via-accent/95 to-secondary/20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl"></div>
-        </div>
-        <div className="container mx-auto text-center relative z-10">
-          <Badge className="mb-6 bg-primary/20 text-primary border-primary/30 hover:bg-primary/30">
-            Творческий подход к каждому проекту
-          </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Ремонт, который <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              вдохновляет
-            </span>
-          </h1>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Превращаем ваше пространство в произведение искусства. Профессиональный ремонт с гарантией качества и креативным подходом.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
-              <DialogTrigger asChild>
-                <Button size="lg" className="text-lg px-8 bg-primary hover:bg-primary/90">
-                  <Icon name="Sparkles" className="mr-2" size={20} />
-                  Записаться на консультацию
-                </Button>
-              </DialogTrigger>
-            </Dialog>
-            <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 border-white/30 text-white hover:bg-white/20">
-              <Icon name="Phone" className="mr-2" size={20} />
-              +7 (999) 123-45-67
-            </Button>
-          </div>
-          <div className="mt-16 grid grid-cols-3 gap-8 max-w-3xl mx-auto">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
-              <div className="text-white/70 text-sm">Завершенных проектов</div>
+      <section className="pt-32 pb-20 px-6">
+        <div className="container mx-auto">
+          <div className="max-w-5xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-primary">Работаем с 2012 года</span>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">12</div>
-              <div className="text-white/70 text-sm">Лет опыта</div>
+            
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight">
+              <span className="bg-gradient-to-r from-foreground via-foreground to-foreground/60 bg-clip-text text-transparent">
+                Ремонт вашей
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
+                мечты
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-foreground/60 max-w-3xl mx-auto leading-relaxed">
+              Превращаем обычные помещения в пространства, где хочется жить. 
+              Более 500 довольных клиентов по всей России.
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <Button size="lg" className="text-lg px-8 py-6 shadow-xl shadow-primary/25 hover:shadow-2xl hover:shadow-primary/30 transition-all">
+                <Icon name="MessageCircle" className="mr-2" size={20} />
+                Бесплатная консультация
+              </Button>
+              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 hover:bg-secondary/50 transition-all">
+                <Icon name="Calculator" className="mr-2" size={20} />
+                Рассчитать стоимость
+              </Button>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">98%</div>
-              <div className="text-white/70 text-sm">Довольных клиентов</div>
+
+            <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
+              <div className="space-y-2">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">500+</div>
+                <div className="text-sm text-foreground/60">Завершенных проектов</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">12</div>
+                <div className="text-sm text-foreground/60">Лет на рынке</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">98%</div>
+                <div className="text-sm text-foreground/60">Довольных клиентов</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="services" className="py-20 px-4 bg-muted/30">
+      <section id="services" className="py-20 px-6">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="mb-4" variant="outline">Наши услуги</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Что мы предлагаем</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Полный спектр услуг по ремонту и отделке помещений любой сложности
+          <div className="text-center mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+              <Icon name="Sparkles" size={16} className="text-primary" />
+              <span className="text-sm font-medium text-primary">Наши услуги</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight">Что мы делаем</h2>
+            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
+              Полный спектр работ для вашего идеального пространства
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <Card key={service.id} className="hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary/50 group">
-                <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                    <Icon name={service.icon as any} className="text-white" size={32} />
+            {services.map((service) => (
+              <Card key={service.id} className="group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
+                <CardHeader className="space-y-4">
+                  <div className="flex items-start justify-between">
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Icon name={service.icon as any} className="text-primary" size={28} />
+                    </div>
+                    <Badge className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20">{service.price}</Badge>
                   </div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base">{service.description}</CardDescription>
+                  <div>
+                    <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
+                    <CardDescription className="text-base">{service.description}</CardDescription>
+                  </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
-                    <div className="text-2xl font-bold text-primary">{service.price}</div>
-                    <ul className="space-y-2">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-2 text-sm">
-                          <Icon name="CheckCircle2" size={16} className="text-primary flex-shrink-0" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
-                      <DialogTrigger asChild>
-                        <Button className="w-full mt-4" variant="outline" onClick={() => setSelectedService(service.title)}>
-                          Заказать услугу
-                        </Button>
-                      </DialogTrigger>
-                    </Dialog>
-                  </div>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-foreground/70">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             ))}
@@ -309,263 +313,51 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="about" className="py-20 px-4">
+      <section id="portfolio" className="py-20 px-6 bg-secondary/30">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <Badge className="mb-4" variant="outline">О компании</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Мы создаем пространства мечты</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                KapitalRu — это команда профессионалов с 12-летним опытом в сфере ремонта и отделки. 
-                Мы не просто выполняем работы, мы воплощаем ваши идеи в реальность, добавляя творческий подход и внимание к деталям.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="Award" className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Гарантия качества</h3>
-                    <p className="text-muted-foreground">Предоставляем гарантию на все виды работ до 3 лет</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="Clock" className="text-secondary" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Соблюдение сроков</h3>
-                    <p className="text-muted-foreground">Работаем строго по договору, без задержек</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="Users" className="text-primary" size={24} />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-1">Опытная команда</h3>
-                    <p className="text-muted-foreground">Сертифицированные мастера с многолетним стажем</p>
-                  </div>
-                </div>
-              </div>
+          <div className="text-center mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+              <Icon name="Briefcase" size={16} className="text-primary" />
+              <span className="text-sm font-medium text-primary">Портфолио</span>
             </div>
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-secondary/20 rounded-3xl overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <Icon name="Building2" size={200} className="text-primary/30" />
-                </div>
-              </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-primary to-secondary rounded-3xl opacity-20 blur-2xl"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="portfolio" className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="mb-4" variant="outline">Портфолио</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши работы</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight">Наши работы</h2>
+            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
               Реализованные проекты, которыми мы гордимся
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/30 to-secondary/30 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon name="Home" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
-                </div>
-                <div className="absolute top-3 right-3">
-                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">Квартира в ЖК "Новая Москва"</CardTitle>
-                <CardDescription>Капитальный ремонт, 85 м²</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Срок выполнения:</span>
-                    <span className="font-semibold">3 месяца</span>
+            {[
+              { icon: "Home", title: "Квартира в ЖК \"Новая Москва\"", desc: "Капитальный ремонт, 85 м²", time: "3 месяца", date: "Октябрь 2024" },
+              { icon: "Bath", title: "Ванная комната премиум", desc: "Полная перепланировка, 12 м²", time: "1 месяц", date: "Сентябрь 2024" },
+              { icon: "Sofa", title: "Гостиная в стиле лофт", desc: "Дизайнерский ремонт, 45 м²", time: "2 месяца", date: "Ноябрь 2024" },
+              { icon: "Utensils", title: "Кухня-студия", desc: "Современный дизайн, 30 м²", time: "1.5 месяца", date: "Август 2024" },
+              { icon: "Building", title: "Офисное помещение", desc: "Коммерческий ремонт, 120 м²", time: "4 месяца", date: "Июль 2024" },
+              { icon: "Bed", title: "Спальня в минимализме", desc: "Косметический ремонт, 25 м²", time: "3 недели", date: "Декабрь 2024" }
+            ].map((item, idx) => (
+              <Card key={idx} className="group overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-purple-600/10 to-primary/5 relative overflow-hidden">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Icon name={item.icon as any} size={80} className="text-primary/30 group-hover:scale-110 transition-transform" />
                   </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Дата:</span>
-                    <span className="font-semibold">Октябрь 2024</span>
+                  <div className="absolute top-3 right-3">
+                    <Badge className="bg-primary text-primary-foreground shadow-lg">Завершено</Badge>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary/30 to-primary/30 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon name="Bath" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
-                </div>
-                <div className="absolute top-3 right-3">
-                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">Ванная комната премиум</CardTitle>
-                <CardDescription>Полная перепланировка, 12 м²</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Срок выполнения:</span>
-                    <span className="font-semibold">1 месяц</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Дата:</span>
-                    <span className="font-semibold">Сентябрь 2024</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/30 to-secondary/30 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon name="Sofa" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
-                </div>
-                <div className="absolute top-3 right-3">
-                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">Гостиная в стиле лофт</CardTitle>
-                <CardDescription>Дизайнерский ремонт, 45 м²</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Срок выполнения:</span>
-                    <span className="font-semibold">2 месяца</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Дата:</span>
-                    <span className="font-semibold">Ноябрь 2024</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary/30 to-primary/30 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon name="Utensils" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
-                </div>
-                <div className="absolute top-3 right-3">
-                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">Кухня-студия</CardTitle>
-                <CardDescription>Современный дизайн, 30 м²</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Срок выполнения:</span>
-                    <span className="font-semibold">1.5 месяца</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Дата:</span>
-                    <span className="font-semibold">Август 2024</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/30 to-secondary/30 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon name="Building" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
-                </div>
-                <div className="absolute top-3 right-3">
-                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">Офисное помещение</CardTitle>
-                <CardDescription>Коммерческий ремонт, 120 м²</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Срок выполнения:</span>
-                    <span className="font-semibold">4 месяца</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Дата:</span>
-                    <span className="font-semibold">Июль 2024</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden hover:shadow-2xl transition-all duration-300 group">
-              <div className="aspect-[4/3] bg-gradient-to-br from-secondary/30 to-primary/30 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Icon name="Bed" size={80} className="text-primary/40 group-hover:scale-110 transition-transform" />
-                </div>
-                <div className="absolute top-3 right-3">
-                  <Badge className="bg-primary text-primary-foreground">Завершено</Badge>
-                </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">Спальня в минимализме</CardTitle>
-                <CardDescription>Косметический ремонт, 25 м²</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Срок выполнения:</span>
-                    <span className="font-semibold">3 недели</span>
-                  </div>
-                  <div className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">Дата:</span>
-                    <span className="font-semibold">Декабрь 2024</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      <section id="reviews" className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="mb-4" variant="outline">Отзывы клиентов</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Что говорят наши клиенты</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Нам доверяют сотни довольных клиентов по всей России
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {reviews.map((review, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow">
                 <CardHeader>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                      <Icon name="User" className="text-white" size={24} />
-                    </div>
-                    <div>
-                      <CardTitle className="text-lg">{review.name}</CardTitle>
-                      <div className="flex gap-1 mt-1">
-                        {[...Array(review.rating)].map((_, i) => (
-                          <Icon key={i} name="Star" size={14} className="text-primary fill-primary" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                  <CardDescription className="text-base leading-relaxed">{review.text}</CardDescription>
+                  <CardTitle className="text-xl">{item.title}</CardTitle>
+                  <CardDescription>{item.desc}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-muted-foreground">{review.date}</p>
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-foreground/60">Срок выполнения:</span>
+                      <span className="font-semibold">{item.time}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-foreground/60">Дата:</span>
+                      <span className="font-semibold">{item.date}</span>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -573,121 +365,178 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="contacts" className="py-20 px-4">
+      <section id="about" className="py-20 px-6">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="mb-4" variant="outline">Контакты</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Свяжитесь с нами</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Готовы обсудить ваш проект? Оставьте заявку или позвоните нам прямо сейчас
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+                <Icon name="Award" size={16} className="text-primary" />
+                <span className="text-sm font-medium text-primary">О компании</span>
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight">Мы создаем пространства мечты</h2>
+              <p className="text-lg text-foreground/60 leading-relaxed">
+                KapitalRu — это команда профессионалов с 12-летним опытом в сфере ремонта и отделки. 
+                Мы не просто выполняем работы, мы воплощаем ваши идеи в реальность, добавляя творческий подход и внимание к деталям.
+              </p>
+              <div className="grid grid-cols-2 gap-6 pt-4">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <Icon name="CheckCircle2" className="text-primary" size={20} />
+                    <span className="font-semibold">Гарантия качества</span>
+                  </div>
+                  <p className="text-sm text-foreground/60 pl-7">2 года на все работы</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <Icon name="Clock" className="text-primary" size={20} />
+                    <span className="font-semibold">Точно в срок</span>
+                  </div>
+                  <p className="text-sm text-foreground/60 pl-7">Договорные сроки</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <Icon name="Shield" className="text-primary" size={20} />
+                    <span className="font-semibold">Безопасность</span>
+                  </div>
+                  <p className="text-sm text-foreground/60 pl-7">Страхование объектов</p>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <Icon name="Wallet" className="text-primary" size={20} />
+                    <span className="font-semibold">Прозрачность</span>
+                  </div>
+                  <p className="text-sm text-foreground/60 pl-7">Фиксированная смета</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="aspect-square bg-gradient-to-br from-primary/20 via-purple-600/20 to-primary/10 rounded-3xl overflow-hidden border-2 border-primary/20">
+                <div className="w-full h-full flex items-center justify-center">
+                  <Icon name="Building2" size={200} className="text-primary/20" />
+                </div>
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-primary to-purple-600 rounded-3xl opacity-20 blur-3xl -z-10"></div>
+              <div className="absolute -top-6 -left-6 w-48 h-48 bg-gradient-to-br from-purple-600 to-primary rounded-3xl opacity-20 blur-3xl -z-10"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" className="py-20 px-6 bg-secondary/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+              <Icon name="Star" size={16} className="text-primary" />
+              <span className="text-sm font-medium text-primary">Отзывы клиентов</span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-bold tracking-tight">Что говорят наши клиенты</h2>
+            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
+              Нам доверяют сотни довольных клиентов по всей России
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <Card className="p-8">
-              <h3 className="text-2xl font-bold mb-6">Оставьте заявку</h3>
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <Label>Имя</Label>
-                  <Input placeholder="Ваше имя" />
-                </div>
-                <div className="space-y-2">
-                  <Label>Телефон</Label>
-                  <Input placeholder="+7 (999) 123-45-67" />
-                </div>
-                <div className="space-y-2">
-                  <Label>Сообщение</Label>
-                  <Textarea placeholder="Расскажите о вашем проекте..." rows={4} />
-                </div>
-                <Button className="w-full" size="lg" onClick={() => toast.success("Заявка отправлена!")}>
-                  Отправить заявку
-                </Button>
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {reviews.map((review, idx) => (
+              <Card key={idx} className="hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex gap-1">
+                      {[...Array(review.rating)].map((_, i) => (
+                        <Icon key={i} name="Star" className="text-primary fill-primary" size={18} />
+                      ))}
+                    </div>
+                    <Badge variant="outline" className="text-xs">{review.date}</Badge>
+                  </div>
+                  <CardTitle className="text-xl">{review.name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-foreground/70 leading-relaxed">{review.text}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contacts" className="py-20 px-6">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16 space-y-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+                <Icon name="Phone" size={16} className="text-primary" />
+                <span className="text-sm font-medium text-primary">Контакты</span>
               </div>
-            </Card>
-            <div className="space-y-6">
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <h2 className="text-5xl md:text-6xl font-bold tracking-tight">Свяжитесь с нами</h2>
+              <p className="text-xl text-foreground/60">
+                Готовы обсудить ваш проект? Мы всегда на связи
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="text-center hover:shadow-xl hover:shadow-primary/10 transition-all border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
+                <CardHeader>
+                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4">
                     <Icon name="Phone" className="text-primary" size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-lg mb-1">Телефон</h4>
-                    <p className="text-muted-foreground">+7 (999) 123-45-67</p>
-                    <p className="text-muted-foreground">+7 (999) 765-43-21</p>
-                  </div>
-                </div>
+                  <CardTitle className="text-lg">Телефон</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <a href="tel:+79991234567" className="text-lg font-semibold text-primary hover:underline">
+                    +7 (999) 123-45-67
+                  </a>
+                </CardContent>
               </Card>
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="Mail" className="text-secondary" size={24} />
+
+              <Card className="text-center hover:shadow-xl hover:shadow-primary/10 transition-all border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
+                <CardHeader>
+                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4">
+                    <Icon name="Mail" className="text-primary" size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-lg mb-1">Email</h4>
-                    <p className="text-muted-foreground">info@kapitalru.ru</p>
-                    <p className="text-muted-foreground">zakaz@kapitalru.ru</p>
-                  </div>
-                </div>
+                  <CardTitle className="text-lg">Email</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <a href="mailto:info@kapitalru.ru" className="text-lg font-semibold text-primary hover:underline">
+                    info@kapitalru.ru
+                  </a>
+                </CardContent>
               </Card>
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+
+              <Card className="text-center hover:shadow-xl hover:shadow-primary/10 transition-all border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
+                <CardHeader>
+                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4">
                     <Icon name="MapPin" className="text-primary" size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-semibold text-lg mb-1">Адрес</h4>
-                    <p className="text-muted-foreground">г. Москва, ул. Строителей, д. 15</p>
-                    <p className="text-sm text-muted-foreground mt-1">Пн-Пт: 9:00 - 19:00, Сб-Вс: 10:00 - 16:00</p>
-                  </div>
-                </div>
+                  <CardTitle className="text-lg">Адрес</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-lg font-semibold">
+                    Москва, ул. Примерная, д. 1
+                  </p>
+                </CardContent>
               </Card>
             </div>
           </div>
         </div>
       </section>
 
-      <footer className="bg-accent text-white py-12 px-4">
+      <footer className="border-t border-border/40 bg-secondary/20 py-12 px-6">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
-                  <Icon name="Home" className="text-white" size={20} />
-                </div>
-                <span className="text-xl font-bold">KapitalRu</span>
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-xl flex items-center justify-center">
+                <Icon name="Home" className="text-white" size={20} />
               </div>
-              <p className="text-white/70 text-sm">
-                Профессиональный ремонт с творческим подходом. Превращаем ваши идеи в реальность.
-              </p>
+              <span className="text-xl font-bold">KapitalRu</span>
             </div>
-            <div>
-              <h4 className="font-semibold mb-4">Услуги</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li>Косметический ремонт</li>
-                <li>Капитальный ремонт</li>
-                <li>Ремонт ванной</li>
-                <li>Электрика</li>
-              </ul>
+            <div className="flex items-center gap-6">
+              <a href="#services" className="text-sm text-foreground/60 hover:text-foreground transition-colors">Услуги</a>
+              <a href="#portfolio" className="text-sm text-foreground/60 hover:text-foreground transition-colors">Портфолио</a>
+              <a href="#about" className="text-sm text-foreground/60 hover:text-foreground transition-colors">О нас</a>
+              <a href="#reviews" className="text-sm text-foreground/60 hover:text-foreground transition-colors">Отзывы</a>
+              <a href="#contacts" className="text-sm text-foreground/60 hover:text-foreground transition-colors">Контакты</a>
             </div>
-            <div>
-              <h4 className="font-semibold mb-4">Компания</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li>О нас</li>
-                <li>Портфолио</li>
-                <li>Отзывы</li>
-                <li>Контакты</li>
-              </ul>
+            <div className="text-sm text-foreground/60">
+              © 2024 KapitalRu. Все права защищены.
             </div>
-            <div>
-              <h4 className="font-semibold mb-4">Контакты</h4>
-              <ul className="space-y-2 text-sm text-white/70">
-                <li>+7 (999) 123-45-67</li>
-                <li>info@kapitalru.ru</li>
-                <li>г. Москва, ул. Строителей, 15</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 mt-8 pt-8 text-center text-sm text-white/50">
-            © 2024 KapitalRu. Все права защищены.
           </div>
         </div>
       </footer>
