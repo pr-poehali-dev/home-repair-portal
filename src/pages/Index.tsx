@@ -126,7 +126,7 @@ export default function Index() {
             <div className="flex items-center gap-3">
               <div className="relative">
                 <div className="w-11 h-11 bg-gradient-to-br from-primary to-amber-400 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25">
-                  <Icon name="Home" className="text-background" size={22} />
+                  <Icon name="Hammer" className="text-background" size={22} />
                 </div>
                 <div className="absolute -inset-1 bg-gradient-to-br from-primary to-amber-400 rounded-2xl blur opacity-30 -z-10"></div>
               </div>
@@ -737,7 +737,7 @@ export default function Index() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-amber-400 rounded-xl flex items-center justify-center">
-                <Icon name="Home" className="text-white" size={20} />
+                <Icon name="Hammer" className="text-background" size={20} />
               </div>
               <span className="text-xl font-bold">KapitalRu</span>
             </div>
