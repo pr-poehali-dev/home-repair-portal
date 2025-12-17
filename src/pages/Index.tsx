@@ -117,10 +117,10 @@ export default function Index() {
           <nav className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="w-11 h-11 bg-gradient-to-br from-primary via-primary to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25">
-                  <Icon name="Home" className="text-white" size={22} />
+                <div className="w-11 h-11 bg-gradient-to-br from-primary to-amber-400 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25">
+                  <Icon name="Home" className="text-background" size={22} />
                 </div>
-                <div className="absolute -inset-1 bg-gradient-to-br from-primary to-purple-600 rounded-2xl blur opacity-30 -z-10"></div>
+                <div className="absolute -inset-1 bg-gradient-to-br from-primary to-amber-400 rounded-2xl blur opacity-30 -z-10"></div>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">KapitalRu</span>
             </div>
@@ -231,7 +231,7 @@ export default function Index() {
                 Ремонт вашей
               </span>
               <br />
-              <span className="bg-gradient-to-r from-primary via-purple-600 to-primary bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary via-amber-400 to-primary bg-clip-text text-transparent">
                 мечты
               </span>
             </h1>
@@ -254,15 +254,15 @@ export default function Index() {
 
             <div className="grid grid-cols-3 gap-8 pt-12 max-w-3xl mx-auto">
               <div className="space-y-2">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">500+</div>
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-amber-400 bg-clip-text text-transparent">500+</div>
                 <div className="text-sm text-foreground/60">Завершенных проектов</div>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">12</div>
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-amber-400 bg-clip-text text-transparent">12</div>
                 <div className="text-sm text-foreground/60">Лет на рынке</div>
               </div>
               <div className="space-y-2">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">98%</div>
+                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-amber-400 bg-clip-text text-transparent">98%</div>
                 <div className="text-sm text-foreground/60">Довольных клиентов</div>
               </div>
             </div>
@@ -287,7 +287,7 @@ export default function Index() {
               <Card key={service.id} className="group hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
                 <CardHeader className="space-y-4">
                   <div className="flex items-start justify-between">
-                    <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-amber-400/20 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                       <Icon name={service.icon as any} className="text-primary" size={28} />
                     </div>
                     <Badge className="bg-primary/10 text-primary border-primary/20 hover:bg-primary/20">{service.price}</Badge>
@@ -335,7 +335,7 @@ export default function Index() {
               { icon: "Bed", title: "Спальня в минимализме", desc: "Косметический ремонт, 25 м²", time: "3 недели", date: "Декабрь 2024" }
             ].map((item, idx) => (
               <Card key={idx} className="group overflow-hidden hover:shadow-2xl hover:shadow-primary/10 transition-all duration-300 border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
-                <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-purple-600/10 to-primary/5 relative overflow-hidden">
+                <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 via-amber-400/10 to-primary/5 relative overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Icon name={item.icon as any} size={80} className="text-primary/30 group-hover:scale-110 transition-transform" />
                   </div>
@@ -410,13 +410,13 @@ export default function Index() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-primary/20 via-purple-600/20 to-primary/10 rounded-3xl overflow-hidden border-2 border-primary/20">
+              <div className="aspect-square bg-gradient-to-br from-primary/20 via-amber-400/20 to-primary/10 rounded-3xl overflow-hidden border-2 border-primary/20">
                 <div className="w-full h-full flex items-center justify-center">
                   <Icon name="Building2" size={200} className="text-primary/20" />
                 </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-primary to-purple-600 rounded-3xl opacity-20 blur-3xl -z-10"></div>
-              <div className="absolute -top-6 -left-6 w-48 h-48 bg-gradient-to-br from-purple-600 to-primary rounded-3xl opacity-20 blur-3xl -z-10"></div>
+              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-br from-primary to-amber-400 rounded-3xl opacity-20 blur-3xl -z-10"></div>
+              <div className="absolute -top-6 -left-6 w-48 h-48 bg-gradient-to-br from-amber-400 to-primary rounded-3xl opacity-20 blur-3xl -z-10"></div>
             </div>
           </div>
         </div>
@@ -474,7 +474,7 @@ export default function Index() {
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="text-center hover:shadow-xl hover:shadow-primary/10 transition-all border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
                 <CardHeader>
-                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4">
+                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-amber-400/20 rounded-2xl flex items-center justify-center mb-4">
                     <Icon name="Phone" className="text-primary" size={24} />
                   </div>
                   <CardTitle className="text-lg">Телефон</CardTitle>
@@ -488,7 +488,7 @@ export default function Index() {
 
               <Card className="text-center hover:shadow-xl hover:shadow-primary/10 transition-all border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
                 <CardHeader>
-                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4">
+                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-amber-400/20 rounded-2xl flex items-center justify-center mb-4">
                     <Icon name="Mail" className="text-primary" size={24} />
                   </div>
                   <CardTitle className="text-lg">Email</CardTitle>
@@ -502,7 +502,7 @@ export default function Index() {
 
               <Card className="text-center hover:shadow-xl hover:shadow-primary/10 transition-all border-2 hover:border-primary/30 bg-card/50 backdrop-blur">
                 <CardHeader>
-                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-purple-600/20 rounded-2xl flex items-center justify-center mb-4">
+                  <div className="mx-auto w-14 h-14 bg-gradient-to-br from-primary/20 to-amber-400/20 rounded-2xl flex items-center justify-center mb-4">
                     <Icon name="MapPin" className="text-primary" size={24} />
                   </div>
                   <CardTitle className="text-lg">Адрес</CardTitle>
@@ -522,7 +522,7 @@ export default function Index() {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-amber-400 rounded-xl flex items-center justify-center">
                 <Icon name="Home" className="text-white" size={20} />
               </div>
               <span className="text-xl font-bold">KapitalRu</span>
