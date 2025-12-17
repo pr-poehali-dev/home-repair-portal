@@ -297,7 +297,7 @@ export default function Index() {
                     <CardDescription className="text-base">{service.description}</CardDescription>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="space-y-4">
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-center gap-2 text-sm text-foreground/70">
@@ -306,6 +306,17 @@ export default function Index() {
                       </li>
                     ))}
                   </ul>
+                  <Button 
+                    onClick={() => {
+                      setSelectedService(service.title);
+                      setIsBookingOpen(true);
+                    }}
+                    className="w-full"
+                    variant="outline"
+                  >
+                    <Icon name="Calendar" className="mr-2" size={16} />
+                    Записаться
+                  </Button>
                 </CardContent>
               </Card>
             ))}
