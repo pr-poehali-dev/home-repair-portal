@@ -93,6 +93,14 @@ export default function Index() {
   const [phone, setPhone] = useState("");
   const [comment, setComment] = useState("");
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isCalculatorOpen, setIsCalculatorOpen] = useState(false);
+  
+  const [calcServiceType, setCalcServiceType] = useState("");
+  const [calcArea, setCalcArea] = useState("");
+  const [calcBathroom, setCalcBathroom] = useState(false);
+  const [calcElectric, setCalcElectric] = useState(false);
+  const [calcPlumbing, setCalcPlumbing] = useState(false);
+  const [calcFlooring, setCalcFlooring] = useState(false);
 
   const handleBooking = () => {
     if (!selectedService || !selectedDate || !selectedTime || !name || !phone) {
@@ -214,6 +222,196 @@ export default function Index() {
                 </div>
               </DialogContent>
             </Dialog>
+
+            <Dialog open={isCalculatorOpen} onOpenChange={setIsCalculatorOpen}>
+              <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl">Калькулятор стоимости ремонта</DialogTitle>
+                  <DialogDescription>Рассчитайте примерную стоимость вашего проекта</DialogDescription>
+                </DialogHeader>
+                <div className="space-y-6 py-4">
+                  <div className="space-y-2">
+                    <Label>Тип ремонта *</Label>
+                    <Select value={calcServiceType} onValueChange={setCalcServiceType}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Выберите тип ремонта" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="cosmetic">Косметический ремонт - 2500₽/м²</SelectItem>
+                        <SelectItem value="major">Капитальный ремонт - 8000₽/м²</SelectItem>
+                        <SelectItem value="designer">Дизайнерский ремонт - 12000₽/м²</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label>Площадь помещения (м²) *</Label>
+                    <Input 
+                      type="number" 
+                      value={calcArea} 
+                      onChange={(e) => setCalcArea(e.target.value)} 
+                      placeholder="Например: 50"
+                      min="1"
+                    />
+                  </div>
+
+                  <div className="space-y-3">
+                    <Label>Дополнительные работы</Label>
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <input 
+                            type="checkbox" 
+                            id="bathroom"
+                            checked={calcBathroom}
+                            onChange={(e) => setCalcBathroom(e.target.checked)}
+                            className="w-4 h-4"
+                          />
+                          <label htmlFor="bathroom" className="cursor-pointer">
+                            <div className="font-medium">Ремонт ванной комнаты</div>
+                            <div className="text-sm text-foreground/60">5500₽/м²</div>
+                          </label>
+                        </div>
+                        <Icon name="Bath" className="text-primary" size={20} />
+                      </div>
+
+                      <div className="flex items-center justify-between p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <input 
+                            type="checkbox" 
+                            id="electric"
+                            checked={calcElectric}
+                            onChange={(e) => setCalcElectric(e.target.checked)}
+                            className="w-4 h-4"
+                          />
+                          <label htmlFor="electric" className="cursor-pointer">
+                            <div className="font-medium">Электромонтажные работы</div>
+                            <div className="text-sm text-foreground/60">1200₽/точка (примерно 10-15 точек)</div>
+                          </label>
+                        </div>
+                        <Icon name="Zap" className="text-primary" size={20} />
+                      </div>
+
+                      <div className="flex items-center justify-between p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <input 
+                            type="checkbox" 
+                            id="plumbing"
+                            checked={calcPlumbing}
+                            onChange={(e) => setCalcPlumbing(e.target.checked)}
+                            className="w-4 h-4"
+                          />
+                          <label htmlFor="plumbing" className="cursor-pointer">
+                            <div className="font-medium">Сантехнические работы</div>
+                            <div className="text-sm text-foreground/60">от 25000₽</div>
+                          </label>
+                        </div>
+                        <Icon name="Wrench" className="text-primary" size={20} />
+                      </div>
+
+                      <div className="flex items-center justify-between p-3 rounded-lg border border-border hover:bg-secondary/50 transition-colors">
+                        <div className="flex items-center gap-3">
+                          <input 
+                            type="checkbox" 
+                            id="flooring"
+                            checked={calcFlooring}
+                            onChange={(e) => setCalcFlooring(e.target.checked)}
+                            className="w-4 h-4"
+                          />
+                          <label htmlFor="flooring" className="cursor-pointer">
+                            <div className="font-medium">Укладка напольного покрытия</div>
+                            <div className="text-sm text-foreground/60">800₽/м²</div>
+                          </label>
+                        </div>
+                        <Icon name="Grid3x3" className="text-primary" size={20} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {calcServiceType && calcArea && (
+                    <div className="mt-6 p-6 bg-primary/10 border-2 border-primary/20 rounded-2xl space-y-4">
+                      <h3 className="text-xl font-bold">Расчёт стоимости</h3>
+                      <div className="space-y-2 text-sm">
+                        <div className="flex justify-between">
+                          <span className="text-foreground/70">
+                            {calcServiceType === "cosmetic" ? "Косметический ремонт" : 
+                             calcServiceType === "major" ? "Капитальный ремонт" : 
+                             "Дизайнерский ремонт"} ({calcArea} м²)
+                          </span>
+                          <span className="font-semibold">
+                            {(parseInt(calcArea) * 
+                              (calcServiceType === "cosmetic" ? 2500 : 
+                               calcServiceType === "major" ? 8000 : 12000)
+                            ).toLocaleString()}₽
+                          </span>
+                        </div>
+                        
+                        {calcBathroom && (
+                          <div className="flex justify-between">
+                            <span className="text-foreground/70">Ремонт ванной (примерно 5 м²)</span>
+                            <span className="font-semibold">27,500₽</span>
+                          </div>
+                        )}
+                        
+                        {calcElectric && (
+                          <div className="flex justify-between">
+                            <span className="text-foreground/70">Электромонтажные работы (12 точек)</span>
+                            <span className="font-semibold">14,400₽</span>
+                          </div>
+                        )}
+                        
+                        {calcPlumbing && (
+                          <div className="flex justify-between">
+                            <span className="text-foreground/70">Сантехнические работы</span>
+                            <span className="font-semibold">25,000₽</span>
+                          </div>
+                        )}
+                        
+                        {calcFlooring && (
+                          <div className="flex justify-between">
+                            <span className="text-foreground/70">Напольное покрытие ({calcArea} м²)</span>
+                            <span className="font-semibold">{(parseInt(calcArea) * 800).toLocaleString()}₽</span>
+                          </div>
+                        )}
+                        
+                        <div className="border-t border-primary/20 pt-3 mt-3">
+                          <div className="flex justify-between items-center">
+                            <span className="text-lg font-bold">Итого:</span>
+                            <span className="text-3xl font-bold text-primary">
+                              {(
+                                parseInt(calcArea) * 
+                                (calcServiceType === "cosmetic" ? 2500 : 
+                                 calcServiceType === "major" ? 8000 : 12000) +
+                                (calcBathroom ? 27500 : 0) +
+                                (calcElectric ? 14400 : 0) +
+                                (calcPlumbing ? 25000 : 0) +
+                                (calcFlooring ? parseInt(calcArea) * 800 : 0)
+                              ).toLocaleString()}₽
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div className="text-xs text-foreground/60 pt-2 border-t border-primary/20">
+                        * Это примерный расчёт. Точная стоимость определяется после осмотра объекта и составления сметы.
+                      </div>
+                      
+                      <Button 
+                        onClick={() => {
+                          setIsCalculatorOpen(false);
+                          setIsBookingOpen(true);
+                        }}
+                        className="w-full"
+                        size="lg"
+                      >
+                        <Icon name="Calendar" className="mr-2" size={18} />
+                        Записаться на консультацию
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              </DialogContent>
+            </Dialog>
           </nav>
         </div>
       </header>
@@ -246,7 +444,12 @@ export default function Index() {
                 <Icon name="MessageCircle" className="mr-2" size={20} />
                 Бесплатная консультация
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 hover:bg-secondary/50 transition-all">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8 py-6 border-2 hover:bg-secondary/50 transition-all"
+                onClick={() => setIsCalculatorOpen(true)}
+              >
                 <Icon name="Calculator" className="mr-2" size={20} />
                 Рассчитать стоимость
               </Button>
